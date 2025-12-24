@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* ALL ORIGINAL ANIMATIONS */
+.gradient-bg {
+  @apply bg-gradient-to-r from-[#667eea] to-[#764ba2];
+}
+
+.ai-gradient {
+  @apply bg-gradient-to-r from-[#ff6b6b] to-[#4ecdc4];
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-4 hover:shadow-2xl;
+}
+
+.ai-pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(79, 172, 254, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(79, 172, 254, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(79, 172, 254, 0); }
+}
+
+.scrollable-filters {
+  @apply max-h-[70vh] overflow-y-auto;
+}
+
+.scrollable-filters::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollable-filters::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+.scrollable-filters::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded;
+}
+
+.modal {
+  @apply hidden fixed inset-0 z-[1000] bg-black/50 flex items-center justify-center p-4;
+}
+
+.modal.show {
+  @apply block;
+}
